@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextiQ Basics - One Page Vignette</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            z-index: 3;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-60px) translateY(-60px); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #764ba2;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8efff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e7ff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-title {
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .feature-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .best-practices {
+            grid-column: 1 / -1;
+        }
+
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .practice-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #f0f4ff;
+            transition: all 0.3s ease;
+        }
+
+        .practice-item:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .practice-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .practice-content {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .practice-text {
+            flex: 1;
+        }
+
+        .practice-title {
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 6px;
+        }
+
+        .practice-description {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .ai-features {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 60px;
+            text-align: center;
+        }
+
+        .ai-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .ai-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .ai-feature {
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ai-feature.clickable:hover {
+            transform: translateY(-3px);
+        }
+
+        .ai-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+
+        .ai-feature-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .info-note {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #6c757d;
+            font-style: italic;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 40px 30px;
+                gap: 40px;
+            }
+            
+            .header {
+                padding: 30px 30px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .ai-features {
+                padding: 30px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg width="130" height="60" viewBox="0 0 130 60" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Qualtrics logo recreation -->
+                    <text x="5" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="white">qualtrics</text>
+                    <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#00D4FF">XM</text>
+                </svg>
+            </div>
+            <h1>TextiQ Basics</h1>
+            <div class="subtitle">Unlock the power of advanced text analytics and AI-driven insights</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Core Features</h2>
+                <div class="info-note">Click on the boxes for more information</div>
+                
+                <div class="feature-card clickable" onclick="window.open('https://www.qualtrics.com/support/survey-platform/data-and-analysis-module/text-iq/sentiment-analysis/', '_blank')">
+                    <div class="feature-title">Sentiment Analysis</div>
+                    <div class="feature-description">
+                        TextiQ automatically determines the sentiment of each response, intelligently classifying it as <span class="highlight">positive, negative, neutral, or mixed</span> to give you instant insight into customer emotions.
+                    </div>
+                </div>
+
+                <div class="feature-card clickable" onclick="window.open('https://www.qualtrics.com/support/survey-platform/data-and-analysis-module/text-iq/topics-in-text-iq/', '_blank')">
+                    <div class="feature-title">Customisable Topics & Queries</div>
+                    <div class="feature-description">
+                        Create your own topics and queries to focus on specific themes or keywords that matter to your business. Use <span class="highlight">Boolean logic</span> to build complex, precise queries.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Smart Query Building</h2>
+                <div class="info-note">Click on the box for more information</div>
+                <div class="feature-card clickable" onclick="window.open('https://www.qualtrics.com/support/survey-platform/data-and-analysis-module/text-iq/topics-in-text-iq/#BuildingComplexSearches', '_blank')">
+                    <div class="feature-description">
+                        Go beyond simple keywords by using powerful operators:
+                        <br><br>
+                        <strong>AND</strong> - Find responses containing multiple terms<br>
+                        <strong>OR</strong> - Capture alternative phrasings<br>
+                        <strong>NOT</strong> - Exclude irrelevant content<br><br>
+                        This precision ensures your topic rules capture exactly what you need to know.
+                    </div>
+                </div>
+            </div>
+
+            <div class="best-practices">
+                <h2 class="section-title">Best Practices for Setting Up Topics</h2>
+                <div class="practices-grid">
+                    <div class="practice-item">
+                        <div class="practice-content">
+                            <div class="practice-number">1</div>
+                            <div class="practice-text">
+                                <div class="practice-title">Start with Broad Themes</div>
+                                <div class="practice-description">Begin with general parent topics (like "Customer Service") and then create more specific sub-topics (like "Wait Time").</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-item">
+                        <div class="practice-content">
+                            <div class="practice-number">2</div>
+                            <div class="practice-text">
+                                <div class="practice-title">Name Topics Neutrally</div>
+                                <div class="practice-description">Use unbiased names like "Price" instead of "Expensive" to capture both positive and negative feedback on the same theme.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-item">
+                        <div class="practice-content">
+                            <div class="practice-number">3</div>
+                            <div class="practice-text">
+                                <div class="practice-title">Let Feedback Guide You</div>
+                                <div class="practice-description">Before you build, check the automatic topic recommendations to see what your respondents are already talking about.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-item">
+                        <div class="practice-content">
+                            <div class="practice-number">4</div>
+                            <div class="practice-text">
+                                <div class="practice-title">Include Synonyms</div>
+                                <div class="practice-description">Add different words people might use for the same idea (e.g., for "Cost," include "price," "fee," "value," etc.).</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-item">
+                        <div class="practice-content">
+                            <div class="practice-number">5</div>
+                            <div class="practice-text">
+                                <div class="practice-title">Check Untagged Responses</div>
+                                <div class="practice-description">Regularly review comments that don't fit into any topic, as they often reveal new or emerging issues.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-item">
+                        <div class="practice-content">
+                            <div class="practice-number">6</div>
+                            <div class="practice-text">
+                                <div class="practice-title">Always Be Refining</div>
+                                <div class="practice-description">Your topic model is a living tool. Keep updating it as you collect more data to ensure it stays accurate and relevant.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-features">
+            <h2 class="ai-title">AI-Powered Intelligence</h2>
+            <div class="info-note" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8);">Click on the icons for more information</div>
+            <div class="ai-features-grid">
+                <div class="ai-feature clickable" onclick="window.open('https://www.qualtrics.com/support/common-use-case/analyzing-results/insight-explorer/', '_blank')">
+                    <div class="ai-icon">🔍</div>
+                    <div class="ai-feature-name">Insights Explorer</div>
+                </div>
+                <div class="ai-feature clickable" onclick="window.open('https://www.qualtrics.com/support/vocalize/qualtrics-assist-cx/', '_blank')">
+                    <div class="ai-icon">🎯</div>
+                    <div class="ai-feature-name">Qualtrics Assist</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
