@@ -164,11 +164,52 @@
 
         .practice-item {
             background: white;
-            padding: 20px;
+            padding: 0;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid #f0f4ff;
             transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .practice-header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .practice-header:hover {
+            background: #f8f9ff;
+        }
+
+        .practice-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .practice-content-wrapper.expanded {
+            max-height: 200px;
+        }
+
+        .practice-description-dropdown {
+            padding: 0 20px 20px 60px;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #f0f4ff;
+        }
+
+        .dropdown-arrow {
+            margin-left: auto;
+            font-size: 1.2rem;
+            color: #1E90FF;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-arrow.rotated {
+            transform: rotate(180deg);
         }
 
         .practice-item:hover {
@@ -212,7 +253,7 @@
         }
 
         .ai-features {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1E90FF 0%, #6A5ACD 100%);
             color: white;
             padding: 40px 60px;
             text-align: center;
@@ -260,7 +301,7 @@
 
         .highlight {
             font-weight: 700;
-            color: #667eea;
+            color: #1E90FF;
         }
 
         .info-note {
@@ -349,62 +390,68 @@
                 <h2 class="section-title">Best Practices for Setting Up Topics</h2>
                 <div class="practices-grid">
                     <div class="practice-item">
-                        <div class="practice-content">
+                        <div class="practice-header" onclick="toggleDropdown(this)">
                             <div class="practice-number">1</div>
-                            <div class="practice-text">
-                                <div class="practice-title">Start with Broad Themes</div>
-                                <div class="practice-description">Begin with general parent topics (like "Customer Service") and then create more specific sub-topics (like "Wait Time").</div>
-                            </div>
+                            <div class="practice-title">Start with Broad Themes</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="practice-content-wrapper">
+                            <div class="practice-description-dropdown">Begin with general parent topics (like "Customer Service") and then create more specific sub-topics (like "Wait Time").</div>
                         </div>
                     </div>
 
                     <div class="practice-item">
-                        <div class="practice-content">
+                        <div class="practice-header" onclick="toggleDropdown(this)">
                             <div class="practice-number">2</div>
-                            <div class="practice-text">
-                                <div class="practice-title">Name Topics Neutrally</div>
-                                <div class="practice-description">Use unbiased names like "Price" instead of "Expensive" to capture both positive and negative feedback on the same theme.</div>
-                            </div>
+                            <div class="practice-title">Name Topics Neutrally</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="practice-content-wrapper">
+                            <div class="practice-description-dropdown">Use unbiased names like "Price" instead of "Expensive" to capture both positive and negative feedback on the same theme.</div>
                         </div>
                     </div>
 
                     <div class="practice-item">
-                        <div class="practice-content">
+                        <div class="practice-header" onclick="toggleDropdown(this)">
                             <div class="practice-number">3</div>
-                            <div class="practice-text">
-                                <div class="practice-title">Let Feedback Guide You</div>
-                                <div class="practice-description">Before you build, check the automatic topic recommendations to see what your respondents are already talking about.</div>
-                            </div>
+                            <div class="practice-title">Let Feedback Guide You</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="practice-content-wrapper">
+                            <div class="practice-description-dropdown">Before you build, check the automatic topic recommendations to see what your respondents are already talking about.</div>
                         </div>
                     </div>
 
                     <div class="practice-item">
-                        <div class="practice-content">
+                        <div class="practice-header" onclick="toggleDropdown(this)">
                             <div class="practice-number">4</div>
-                            <div class="practice-text">
-                                <div class="practice-title">Include Synonyms</div>
-                                <div class="practice-description">Add different words people might use for the same idea (e.g., for "Cost," include "price," "fee," "value," etc.).</div>
-                            </div>
+                            <div class="practice-title">Include Synonyms</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="practice-content-wrapper">
+                            <div class="practice-description-dropdown">Add different words people might use for the same idea (e.g., for "Cost," include "price," "fee," "value," etc.).</div>
                         </div>
                     </div>
 
                     <div class="practice-item">
-                        <div class="practice-content">
+                        <div class="practice-header" onclick="toggleDropdown(this)">
                             <div class="practice-number">5</div>
-                            <div class="practice-text">
-                                <div class="practice-title">Check Untagged Responses</div>
-                                <div class="practice-description">Regularly review comments that don't fit into any topic, as they often reveal new or emerging issues.</div>
-                            </div>
+                            <div class="practice-title">Check Untagged Responses</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="practice-content-wrapper">
+                            <div class="practice-description-dropdown">Regularly review comments that don't fit into any topic, as they often reveal new or emerging issues.</div>
                         </div>
                     </div>
 
                     <div class="practice-item">
-                        <div class="practice-content">
+                        <div class="practice-header" onclick="toggleDropdown(this)">
                             <div class="practice-number">6</div>
-                            <div class="practice-text">
-                                <div class="practice-title">Always Be Refining</div>
-                                <div class="practice-description">Your topic model is a living tool. Keep updating it as you collect more data to ensure it stays accurate and relevant.</div>
-                            </div>
+                            <div class="practice-title">Always Be Refining</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="practice-content-wrapper">
+                            <div class="practice-description-dropdown">Your topic model is a living tool. Keep updating it as you collect more data to ensure it stays accurate and relevant.</div>
                         </div>
                     </div>
                 </div>
@@ -426,5 +473,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleDropdown(header) {
+            const contentWrapper = header.nextElementSibling;
+            const arrow = header.querySelector('.dropdown-arrow');
+            
+            // Toggle expanded class
+            contentWrapper.classList.toggle('expanded');
+            arrow.classList.toggle('rotated');
+        }
+    </script>
 </body>
 </html>
