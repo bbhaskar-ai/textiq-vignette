@@ -318,10 +318,282 @@
             border-top: 1px solid #d0e7ff;
         }
 
+        .workflow-section {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+        }
+
+        .workflow-intro {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #d0e7ff;
+            text-align: center;
+        }
+
+        .workflow-intro h3 {
+            color: #0066CC;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .workflow-intro p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        .workflow-stage {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-stage:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .workflow-header {
+            background: linear-gradient(135deg, #1E90FF 0%, #6A5ACD 100%);
+            color: white;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-header:hover {
+            background: linear-gradient(135deg, #0066CC 0%, #5a4fcf 100%);
+        }
+
+        .stage-number {
+            background: rgba(255,255,255,0.2);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .stage-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .workflow-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .workflow-content-wrapper.expanded {
+            max-height: 300px;
+        }
+
+        .workflow-content {
+            padding: 24px;
+            background: #fafbff;
+        }
+
+        .workflow-description {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .workflow-highlight {
+            background: linear-gradient(135deg, #e6f3ff 0%, #d0e7ff 100%);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #1E90FF;
+            margin-top: 10px;
+        }
+
+        .workflow-highlight strong {
+            color: #0066CC;
+        }
+
+        .workflow-arrow {
+            text-align: center;
+            color: #1E90FF;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            opacity: 0.7;
+        }
+
+        .stage-icon {
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+
         .value-prop-grid {
             display: grid;
             gap: 12px;
             margin-top: 20px;
+        }
+
+        .workflow-section {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+        }
+
+        .workflow-intro {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #d0e7ff;
+            text-align: center;
+        }
+
+        .workflow-intro h3 {
+            color: #0066CC;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .workflow-intro p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        .workflow-stage {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-stage:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .workflow-header {
+            background: linear-gradient(135deg, #1E90FF 0%, #6A5ACD 100%);
+            color: white;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-header:hover {
+            background: linear-gradient(135deg, #0066CC 0%, #5a4fcf 100%);
+        }
+
+        .stage-number {
+            background: rgba(255,255,255,0.2);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .stage-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .workflow-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .workflow-content-wrapper.expanded {
+            max-height: 300px;
+        }
+
+        .workflow-content {
+            padding: 24px;
+            background: #fafbff;
+        }
+
+        .workflow-description {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .workflow-highlight {
+            background: linear-gradient(135deg, #e6f3ff 0%, #d0e7ff 100%);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #1E90FF;
+            margin-top: 10px;
+        }
+
+        .workflow-highlight strong {
+            color: #0066CC;
+        }
+
+        .workflow-arrow {
+            text-align: center;
+            color: #1E90FF;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            opacity: 0.7;
+        }
+
+        .stage-icon {
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .workflow-container {
+                gap: 15px;
+            }
+            
+            .workflow-header {
+                padding: 15px 18px;
+            }
+            
+            .workflow-content {
+                padding: 18px;
+            }
         }
 
         .practice-item:hover {
@@ -458,7 +730,72 @@
                     <text x="5" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="white">qualtrics</text>
                     <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#00D4FF">XM</text>
                 </svg>
+                <div class="workflow-section">
+                <h2 class="section-title">Deploying TextiQ in Your Research Workflow</h2>
+                
+                <div class="workflow-intro">
+                    <h3>Transform Raw Text into Structured Insights</h3>
+                    <p>For academics, TextiQ transforms raw text from open-ended questions into structured, <strong>analysable</strong> insights. Imagine you've surveyed students on remote learning and have hundreds of text responses; this three-stage workflow shows you how to systematically <strong>analyse</strong> them.</p>
+                </div>
+
+                <div class="info-note">Click on each stage to explore the workflow</div>
+
+                <div class="workflow-container">
+                    <div class="workflow-stage">
+                        <div class="workflow-header" onclick="toggleWorkflow(this)">
+                            <div class="stage-number">1</div>
+                            <div class="stage-title">Exploration & Discovery</div>
+                            <div class="stage-icon">🔍</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="workflow-content-wrapper">
+                            <div class="workflow-content">
+                                <div class="workflow-description">
+                                    This is your first pass to get a high-level overview. Deploy TextiQ immediately after data collection to let its AI automatically detect initial topics and <strong>analyse</strong> sentiment. This gives you an instant "pulse check" of your dataset, revealing the most frequent concepts and the general tone of the responses before you begin your detailed analysis.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-arrow">↓</div>
+
+                    <div class="workflow-stage">
+                        <div class="workflow-header" onclick="toggleWorkflow(this)">
+                            <div class="stage-number">2</div>
+                            <div class="stage-title">Refinement & Structuring</div>
+                            <div class="stage-icon">🔧</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="workflow-content-wrapper">
+                            <div class="workflow-content">
+                                <div class="workflow-description">
+                                    In this stage, you bring your researcher's intellect to the AI's output. Use TextiQ's tools to clean the data and refine the topics. Merge similar terms (e.g., 'lonely,' 'disconnected,' and 'isolated') into a single, robust theme like <strong>"Social Isolation"</strong>. This transforms the raw text into a structured "codebook" of clear, analytically useful categories that will form the foundation of your findings.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-arrow">↓</div>
+
+                    <div class="workflow-stage">
+                        <div class="workflow-header" onclick="toggleWorkflow(this)">
+                            <div class="stage-number">3</div>
+                            <div class="stage-title">Reporting & Visualisation</div>
+                            <div class="stage-icon">📊</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="workflow-content-wrapper">
+                            <div class="workflow-content">
+                                <div class="workflow-description">
+                                    Once your themes are defined, use TextiQ to communicate your findings. Instantly generate visuals like bar charts or word clouds to place directly into your manuscript or presentation. You can also easily filter responses to find the most powerful, illustrative quotes to support your arguments. This allows you to present compelling, data-driven evidence that strengthens your qualitative narrative with speed and precision.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+        </div>
             <h1>TextiQ Basics</h1>
             <div class="subtitle">Unlock the power of advanced text analytics and AI-driven insights</div>
         </div>
@@ -633,6 +970,15 @@
         }
 
         function toggleValueProp(header) {
+            const contentWrapper = header.nextElementSibling;
+            const arrow = header.querySelector('.dropdown-arrow');
+            
+            // Toggle expanded class
+            contentWrapper.classList.toggle('expanded');
+            arrow.classList.toggle('rotated');
+        }
+
+        function toggleWorkflow(header) {
             const contentWrapper = header.nextElementSibling;
             const arrow = header.querySelector('.dropdown-arrow');
             
