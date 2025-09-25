@@ -730,72 +730,7 @@
                     <text x="5" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="white">qualtrics</text>
                     <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#00D4FF">XM</text>
                 </svg>
-                <div class="workflow-section">
-                <h2 class="section-title">Deploying TextiQ in Your Research Workflow</h2>
-                
-                <div class="workflow-intro">
-                    <h3>Transform Raw Text into Structured Insights</h3>
-                    <p>For academics, TextiQ transforms raw text from open-ended questions into structured, <strong>analysable</strong> insights. Imagine you've surveyed students on remote learning and have hundreds of text responses; this three-stage workflow shows you how to systematically <strong>analyse</strong> them.</p>
-                </div>
-
-                <div class="info-note">Click on each stage to explore the workflow</div>
-
-                <div class="workflow-container">
-                    <div class="workflow-stage">
-                        <div class="workflow-header" onclick="toggleWorkflow(this)">
-                            <div class="stage-number">1</div>
-                            <div class="stage-title">Exploration & Discovery</div>
-                            <div class="stage-icon">🔍</div>
-                            <div class="dropdown-arrow">▼</div>
-                        </div>
-                        <div class="workflow-content-wrapper">
-                            <div class="workflow-content">
-                                <div class="workflow-description">
-                                    This is your first pass to get a high-level overview. Deploy TextiQ immediately after data collection to let its AI automatically detect initial topics and <strong>analyse</strong> sentiment. This gives you an instant "pulse check" of your dataset, revealing the most frequent concepts and the general tone of the responses before you begin your detailed analysis.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="workflow-arrow">↓</div>
-
-                    <div class="workflow-stage">
-                        <div class="workflow-header" onclick="toggleWorkflow(this)">
-                            <div class="stage-number">2</div>
-                            <div class="stage-title">Refinement & Structuring</div>
-                            <div class="stage-icon">🔧</div>
-                            <div class="dropdown-arrow">▼</div>
-                        </div>
-                        <div class="workflow-content-wrapper">
-                            <div class="workflow-content">
-                                <div class="workflow-description">
-                                    In this stage, you bring your researcher's intellect to the AI's output. Use TextiQ's tools to clean the data and refine the topics. Merge similar terms (e.g., 'lonely,' 'disconnected,' and 'isolated') into a single, robust theme like <strong>"Social Isolation"</strong>. This transforms the raw text into a structured "codebook" of clear, analytically useful categories that will form the foundation of your findings.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="workflow-arrow">↓</div>
-
-                    <div class="workflow-stage">
-                        <div class="workflow-header" onclick="toggleWorkflow(this)">
-                            <div class="stage-number">3</div>
-                            <div class="stage-title">Reporting & Visualisation</div>
-                            <div class="stage-icon">📊</div>
-                            <div class="dropdown-arrow">▼</div>
-                        </div>
-                        <div class="workflow-content-wrapper">
-                            <div class="workflow-content">
-                                <div class="workflow-description">
-                                    Once your themes are defined, use TextiQ to communicate your findings. Instantly generate visuals like bar charts or word clouds to place directly into your manuscript or presentation. You can also easily filter responses to find the most powerful, illustrative quotes to support your arguments. This allows you to present compelling, data-driven evidence that strengthens your qualitative narrative with speed and precision.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-        </div>
             <h1>TextiQ Basics</h1>
             <div class="subtitle">Unlock the power of advanced text analytics and AI-driven insights</div>
         </div>
@@ -970,15 +905,6 @@
         }
 
         function toggleValueProp(header) {
-            const contentWrapper = header.nextElementSibling;
-            const arrow = header.querySelector('.dropdown-arrow');
-            
-            // Toggle expanded class
-            contentWrapper.classList.toggle('expanded');
-            arrow.classList.toggle('rotated');
-        }
-
-        function toggleWorkflow(header) {
             const contentWrapper = header.nextElementSibling;
             const arrow = header.querySelector('.dropdown-arrow');
             
