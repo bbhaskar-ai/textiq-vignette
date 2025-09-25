@@ -150,6 +150,10 @@
             color: #555;
             line-height: 1.6;
         }
+		
+		.clickable {
+			cursor: pointer;
+		}
 
         .best-practices {
             grid-column: 1 / -1;
@@ -171,6 +175,11 @@
             transition: all 0.3s ease;
             overflow: hidden;
         }
+		
+		.practice-item:hover {
+            border-color: #1E90FF;
+            box-shadow: 0 8px 25px rgba(30, 144, 255, 0.15);
+        }
 
         .practice-header {
             display: flex;
@@ -183,425 +192,8 @@
         .practice-header:hover {
             background: #f8f9ff;
         }
-
-        .practice-content-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .practice-content-wrapper.expanded {
-            max-height: 200px;
-        }
-
-        .practice-description-dropdown {
-            padding: 0 16px 16px 52px;
-            color: #666;
-            font-size: 0.9rem;
-            border-top: 1px solid #f0f4ff;
-        }
-
-        .dropdown-arrow {
-            margin-left: auto;
-            font-size: 1.2rem;
-            color: #1E90FF;
-            transition: transform 0.3s ease;
-        }
-
-        .value-prop-item {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            padding: 0;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #d0e7ff;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .value-prop-header {
-            display: flex;
-            align-items: center;
-            padding: 18px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .value-prop-header:hover {
-            background: rgba(255,255,255,0.6);
-        }
-
-        .value-prop-icon {
-            font-size: 1.5rem;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        .value-prop-title {
-            font-weight: 700;
-            color: #0066CC;
-            font-size: 1rem;
-            flex: 1;
-        }
-
-        .value-prop-content-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .value-prop-content-wrapper.expanded {
-            max-height: 150px;
-        }
-
-        .value-prop-description {
-            padding: 0 18px 18px 62px;
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            border-top: 1px solid #d0e7ff;
-        }
-
-        .dropdown-arrow.rotated {
-            transform: rotate(180deg);
-        }
-
-        .value-prop-item {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            padding: 0;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #d0e7ff;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .value-prop-header {
-            display: flex;
-            align-items: center;
-            padding: 18px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .value-prop-header:hover {
-            background: rgba(255,255,255,0.6);
-        }
-
-        .value-prop-icon {
-            font-size: 1.5rem;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        .value-prop-title {
-            font-weight: 700;
-            color: #0066CC;
-            font-size: 1rem;
-            flex: 1;
-        }
-
-        .value-prop-content-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .value-prop-content-wrapper.expanded {
-            max-height: 150px;
-        }
-
-        .value-prop-description {
-            padding: 0 18px 18px 62px;
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            border-top: 1px solid #d0e7ff;
-        }
-
-        .workflow-section {
-            grid-column: 1 / -1;
-            margin-top: 20px;
-        }
-
-        .workflow-intro {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border: 1px solid #d0e7ff;
-            text-align: center;
-        }
-
-        .workflow-intro h3 {
-            color: #0066CC;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .workflow-intro p {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .workflow-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            position: relative;
-        }
-
-        .workflow-stage {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .workflow-stage:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-
-        .workflow-header {
-            background: linear-gradient(135deg, #1E90FF 0%, #6A5ACD 100%);
-            color: white;
-            padding: 18px 24px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .workflow-header:hover {
-            background: linear-gradient(135deg, #0066CC 0%, #5a4fcf 100%);
-        }
-
-        .stage-number {
-            background: rgba(255,255,255,0.2);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .stage-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            flex: 1;
-        }
-
-        .workflow-content-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-
-        .workflow-content-wrapper.expanded {
-            max-height: 300px;
-        }
-
-        .workflow-content {
-            padding: 24px;
-            background: #fafbff;
-        }
-
-        .workflow-description {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .workflow-highlight {
-            background: linear-gradient(135deg, #e6f3ff 0%, #d0e7ff 100%);
-            padding: 12px 16px;
-            border-radius: 8px;
-            border-left: 4px solid #1E90FF;
-            margin-top: 10px;
-        }
-
-        .workflow-highlight strong {
-            color: #0066CC;
-        }
-
-        .workflow-arrow {
-            text-align: center;
-            color: #1E90FF;
-            font-size: 1.5rem;
-            margin: 10px 0;
-            opacity: 0.7;
-        }
-
-        .stage-icon {
-            font-size: 1.2rem;
-            margin-left: 10px;
-        }
-
-        .value-prop-grid {
-            display: grid;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .workflow-section {
-            grid-column: 1 / -1;
-            margin-top: 20px;
-        }
-
-        .workflow-intro {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border: 1px solid #d0e7ff;
-            text-align: center;
-        }
-
-        .workflow-intro h3 {
-            color: #0066CC;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .workflow-intro p {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .workflow-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            position: relative;
-        }
-
-        .workflow-stage {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .workflow-stage:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-
-        .workflow-header {
-            background: linear-gradient(135deg, #1E90FF 0%, #6A5ACD 100%);
-            color: white;
-            padding: 18px 24px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .workflow-header:hover {
-            background: linear-gradient(135deg, #0066CC 0%, #5a4fcf 100%);
-        }
-
-        .stage-number {
-            background: rgba(255,255,255,0.2);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .stage-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            flex: 1;
-        }
-
-        .workflow-content-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-
-        .workflow-content-wrapper.expanded {
-            max-height: 300px;
-        }
-
-        .workflow-content {
-            padding: 24px;
-            background: #fafbff;
-        }
-
-        .workflow-description {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .workflow-highlight {
-            background: linear-gradient(135deg, #e6f3ff 0%, #d0e7ff 100%);
-            padding: 12px 16px;
-            border-radius: 8px;
-            border-left: 4px solid #1E90FF;
-            margin-top: 10px;
-        }
-
-        .workflow-highlight strong {
-            color: #0066CC;
-        }
-
-        .workflow-arrow {
-            text-align: center;
-            color: #1E90FF;
-            font-size: 1.5rem;
-            margin: 10px 0;
-            opacity: 0.7;
-        }
-
-        .stage-icon {
-            font-size: 1.2rem;
-            margin-left: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .workflow-container {
-                gap: 15px;
-            }
-            
-            .workflow-header {
-                padding: 15px 18px;
-            }
-            
-            .workflow-content {
-                padding: 18px;
-            }
-        }
-
-        .practice-item:hover {
-            border-color: #1E90FF;
-            box-shadow: 0 8px 25px rgba(30, 144, 255, 0.15);
-        }
-
-        .practice-number {
+		
+		.practice-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -615,25 +207,209 @@
             margin-right: 12px;
             flex-shrink: 0;
         }
-
-        .practice-content {
-            display: flex;
-            align-items: flex-start;
+		
+		.practice-title {
+            font-weight: 700;
+            color: #0066CC;
         }
 
-        .practice-text {
+        .practice-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .practice-content-wrapper.expanded {
+            max-height: 200px;
+        }
+
+        .practice-description-dropdown {
+            padding: 0 16px 16px 56px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #f0f4ff;
+        }
+
+        .dropdown-arrow {
+            margin-left: auto;
+            font-size: 1.2rem;
+            color: #1E90FF;
+            transition: transform 0.3s ease;
+        }
+		
+		.dropdown-arrow.rotated {
+            transform: rotate(180deg);
+        }
+		
+		.value-prop-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .value-prop-item {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 0;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #d0e7ff;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .value-prop-header {
+            display: flex;
+            align-items: center;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .value-prop-header:hover {
+            background: rgba(255,255,255,0.6);
+        }
+
+        .value-prop-title {
+            font-weight: 700;
+            color: #0066CC;
+            font-size: 1rem;
             flex: 1;
         }
 
-        .practice-title {
-            font-weight: 700;
-            color: #0066CC;
-            margin-bottom: 6px;
+        .value-prop-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
 
-        .practice-description {
-            color: #666;
+        .value-prop-content-wrapper.expanded {
+            max-height: 150px;
+        }
+
+        .value-prop-description {
+            padding: 0 18px 18px 22px;
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-top: 1px solid #d0e7ff;
+        }
+
+        .workflow-section {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+        }
+
+        .workflow-intro {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #d0e7ff;
+            text-align: center;
+        }
+
+        .workflow-intro h3 {
+            color: #0066CC;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .workflow-intro p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+			max-width: 800px;
+			margin: 0 auto;
+        }
+
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .workflow-stage {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-stage:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .workflow-header {
+            background: linear-gradient(135deg, #1E90FF 0%, #6A5ACD 100%);
+            color: white;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-header:hover {
+            background: linear-gradient(135deg, #0066CC 0%, #5a4fcf 100%);
+        }
+
+        .stage-number {
+            background: rgba(255,255,255,0.2);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .stage-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .workflow-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .workflow-content-wrapper.expanded {
+            max-height: 300px;
+        }
+
+        .workflow-content {
+            padding: 24px;
+            background: #fafbff;
+        }
+
+        .workflow-description {
+            color: #555;
             font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .workflow-arrow {
+            text-align: center;
+            color: #1E90FF;
+            font-size: 1.5rem;
+            margin: -5px 0;
+            opacity: 0.7;
+        }
+
+        .stage-icon {
+            font-size: 1.2rem;
+            margin-left: 10px;
         }
 
         .ai-features {
@@ -656,13 +432,7 @@
             gap: 30px;
         }
 
-        .ai-feature {
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .ai-feature.clickable:hover {
+        .ai-feature:hover {
             transform: translateY(-3px);
         }
 
@@ -706,17 +476,23 @@
                 padding: 40px 30px;
                 gap: 40px;
             }
-            
             .header {
                 padding: 30px 30px;
             }
-            
             .header h1 {
                 font-size: 2.2rem;
             }
-            
             .ai-features {
                 padding: 30px 30px;
+            }
+			.workflow-container {
+                gap: 0;
+            }
+            .workflow-header {
+                padding: 15px 18px;
+            }
+            .workflow-content {
+                padding: 18px;
             }
         }
     </style>
@@ -726,7 +502,6 @@
         <div class="header">
             <div class="logo">
                 <svg width="130" height="60" viewBox="0 0 130 60" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Qualtrics logo recreation -->
                     <text x="5" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="white">qualtrics</text>
                     <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#00D4FF">XM</text>
                 </svg>
@@ -876,7 +651,60 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="workflow-section">
+                <h2 class="section-title">Deploying TextiQ in Your Research Workflow</h2>
+                <div class="workflow-intro">
+                    <h3>A Three-Stage Use Case</h3>
+                    <p>For academics, TextiQ transforms raw text from open-ended questions into structured, analysable insights. Imagine you've surveyed students on remote learning and have hundreds of text responses; this three-stage workflow shows you how to systematically analyse them.</p>
+                </div>
+
+                <div class="workflow-container">
+                    <div class="workflow-stage">
+                        <div class="workflow-header" onclick="toggleWorkflow(this)">
+                            <div class="stage-number">1</div>
+                            <div class="stage-title">Exploration & Discovery</div>
+                            <div class="dropdown-arrow stage-icon">▼</div>
+                        </div>
+                        <div class="workflow-content-wrapper">
+                            <div class="workflow-content">
+                                <p class="workflow-description">This is your first pass to get a high-level overview. Deploy TextiQ immediately after data collection to let its AI automatically detect initial topics and analyse sentiment. This gives you an instant "pulse check" of your dataset, revealing the most frequent concepts and the general tone of the responses before you begin your detailed analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-arrow">▼</div>
+
+                    <div class="workflow-stage">
+                        <div class="workflow-header" onclick="toggleWorkflow(this)">
+                            <div class="stage-number">2</div>
+                            <div class="stage-title">Refinement & Structuring</div>
+                            <div class="dropdown-arrow stage-icon">▼</div>
+                        </div>
+                        <div class="workflow-content-wrapper">
+                            <div class="workflow-content">
+                                <p class="workflow-description">In this stage, you bring your researcher's intellect to the AI's output. Use TextiQ's tools to clean the data and refine the topics. Merge similar terms (e.g., 'lonely,' 'disconnected,' and 'isolated') into a single, robust theme like "Social Isolation". This transforms the raw text into a structured "codebook" of clear, analytically useful categories that will form the foundation of your findings.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-arrow">▼</div>
+
+                    <div class="workflow-stage">
+                        <div class="workflow-header" onclick="toggleWorkflow(this)">
+                            <div class="stage-number">3</div>
+                            <div class="stage-title">Reporting & Visualisation</div>
+                            <div class="dropdown-arrow stage-icon">▼</div>
+                        </div>
+                        <div class="workflow-content-wrapper">
+                            <div class="workflow-content">
+                                <p class="workflow-description">Once your themes are defined, use TextiQ to communicate your findings. Instantly generate visuals like bar charts or word clouds to place directly into your manuscript or presentation. You can also easily filter responses to find the most powerful, illustrative quotes to support your arguments. This allows you to present compelling, data-driven evidence that strengthens your qualitative narrative with speed and precision.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 
         <div class="ai-features">
             <h2 class="ai-title">AI-Powered Intelligence</h2>
@@ -899,7 +727,6 @@
             const contentWrapper = header.nextElementSibling;
             const arrow = header.querySelector('.dropdown-arrow');
             
-            // Toggle expanded class
             contentWrapper.classList.toggle('expanded');
             arrow.classList.toggle('rotated');
         }
@@ -908,7 +735,14 @@
             const contentWrapper = header.nextElementSibling;
             const arrow = header.querySelector('.dropdown-arrow');
             
-            // Toggle expanded class
+            contentWrapper.classList.toggle('expanded');
+            arrow.classList.toggle('rotated');
+        }
+
+        function toggleWorkflow(header) {
+            const contentWrapper = header.nextElementSibling;
+            const arrow = header.querySelector('.dropdown-arrow');
+
             contentWrapper.classList.toggle('expanded');
             arrow.classList.toggle('rotated');
         }
