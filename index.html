@@ -83,14 +83,14 @@
         }
 
         .content {
-            padding: 60px;
+            padding: 50px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .section-title {
@@ -157,16 +157,16 @@
 
         .practices-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .practice-item {
             background: white;
             padding: 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
             border: 1px solid #f0f4ff;
             transition: all 0.3s ease;
             overflow: hidden;
@@ -175,7 +175,7 @@
         .practice-header {
             display: flex;
             align-items: center;
-            padding: 20px;
+            padding: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -195,9 +195,9 @@
         }
 
         .practice-description-dropdown {
-            padding: 0 20px 20px 60px;
+            padding: 0 16px 16px 52px;
             color: #666;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             border-top: 1px solid #f0f4ff;
         }
 
@@ -208,8 +208,120 @@
             transition: transform 0.3s ease;
         }
 
+        .value-prop-item {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 0;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #d0e7ff;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .value-prop-header {
+            display: flex;
+            align-items: center;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .value-prop-header:hover {
+            background: rgba(255,255,255,0.6);
+        }
+
+        .value-prop-icon {
+            font-size: 1.5rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .value-prop-title {
+            font-weight: 700;
+            color: #0066CC;
+            font-size: 1rem;
+            flex: 1;
+        }
+
+        .value-prop-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .value-prop-content-wrapper.expanded {
+            max-height: 150px;
+        }
+
+        .value-prop-description {
+            padding: 0 18px 18px 62px;
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-top: 1px solid #d0e7ff;
+        }
+
         .dropdown-arrow.rotated {
             transform: rotate(180deg);
+        }
+
+        .value-prop-item {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 0;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #d0e7ff;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .value-prop-header {
+            display: flex;
+            align-items: center;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .value-prop-header:hover {
+            background: rgba(255,255,255,0.6);
+        }
+
+        .value-prop-icon {
+            font-size: 1.5rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .value-prop-title {
+            font-weight: 700;
+            color: #0066CC;
+            font-size: 1rem;
+            flex: 1;
+        }
+
+        .value-prop-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .value-prop-content-wrapper.expanded {
+            max-height: 150px;
+        }
+
+        .value-prop-description {
+            padding: 0 18px 18px 62px;
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-top: 1px solid #d0e7ff;
+        }
+
+        .value-prop-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         .practice-item:hover {
@@ -353,6 +465,42 @@
 
         <div class="content">
             <div class="section">
+                <h2 class="section-title">Why TextiQ?</h2>
+                <div class="info-note">Click on the sections to learn about TextiQ's value</div>
+                <div class="value-prop-grid">
+                    <div class="value-prop-item">
+                        <div class="value-prop-header" onclick="toggleValueProp(this)">
+                            <div class="value-prop-title">Accelerate Time-to-Insight</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="value-prop-content-wrapper">
+                            <div class="value-prop-description">TextiQ <strong>automates tedious manual coding</strong>, transforming hours of thematic analysis into minutes. This dramatically shortens the research lifecycle and speeds up time to publication.</div>
+                        </div>
+                    </div>
+
+                    <div class="value-prop-item">
+                        <div class="value-prop-header" onclick="toggleValueProp(this)">
+                            <div class="value-prop-title">Uncover Hidden Themes</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="value-prop-content-wrapper">
+                            <div class="value-prop-description">The platform's AI <strong>identifies topic clusters and connections</strong> that are often missed by the human eye, delivering deeper, higher-quality insights from your qualitative data.</div>
+                        </div>
+                    </div>
+
+                    <div class="value-prop-item">
+                        <div class="value-prop-header" onclick="toggleValueProp(this)">
+                            <div class="value-prop-title">Empower All Researchers</div>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
+                        <div class="value-prop-content-wrapper">
+                            <div class="value-prop-description">By simplifying complex text and sentiment analysis, TextiQ makes powerful qualitative methods accessible to everyone, <strong>removing the need for specialised skills</strong> and reducing manual error.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
                 <h2 class="section-title">Core Features</h2>
                 <div class="info-note">Click on the boxes for more information</div>
                 
@@ -476,6 +624,15 @@
 
     <script>
         function toggleDropdown(header) {
+            const contentWrapper = header.nextElementSibling;
+            const arrow = header.querySelector('.dropdown-arrow');
+            
+            // Toggle expanded class
+            contentWrapper.classList.toggle('expanded');
+            arrow.classList.toggle('rotated');
+        }
+
+        function toggleValueProp(header) {
             const contentWrapper = header.nextElementSibling;
             const arrow = header.querySelector('.dropdown-arrow');
             
